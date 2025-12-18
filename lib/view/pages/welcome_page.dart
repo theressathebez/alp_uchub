@@ -165,7 +165,6 @@ class HeroSection extends StatelessWidget {
       builder: (context, constraints) {
         final maxWidth = constraints.maxWidth;
 
-        // 🔹 Scaling rules
         final double imageScale =
             maxWidth < 600 ? 0.7 : maxWidth < 900 ? 0.85 : 1.0;
 

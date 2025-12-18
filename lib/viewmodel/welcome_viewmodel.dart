@@ -33,15 +33,14 @@ class WelcomeViewModel extends ChangeNotifier {
   List<FeatureItemModel> get features => _features;
 
   void navigateToLogin(BuildContext context) {
-    debugPrint("Navigasi ke Login Page");
-    // Navigator.pushNamed(context, '/login');
+    Navigator.pushNamed(context, '/login');
+  }
+
+  void navigateToRegister(BuildContext context) {
+    Navigator.pushNamed(context, '/register');
   }
 
   void navigateToFindJobs(BuildContext context) {
-    debugPrint("Navigasi ke Find Jobs");
-  }
-
-  void navigateToPartners(BuildContext context) {
-    debugPrint("Navigasi ke Partners");
+    Navigator.pushNamed(context, '/register');
   }
 }

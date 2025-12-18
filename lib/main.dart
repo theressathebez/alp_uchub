@@ -1,7 +1,10 @@
+import 'package:alp_uchub/view/pages/login_page.dart';
+import 'package:alp_uchub/view/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart'; // Jika pakai dotenv
 import 'viewmodel/welcome_viewmodel.dart';
+import 'viewmodel/auth_viewmodel.dart';
 import 'view/pages/welcome_page.dart';
 
 Future<void> main() async {
@@ -19,13 +22,16 @@ class IceApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => WelcomeViewModel()),
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
       ],
       child: MaterialApp(
-        title: 'ICE Portal',
+        title: 'UC HUB',
         debugShowCheckedModeBanner: false,
         home: const WelcomePage(),
         routes: {
-          // '/login': (context) => const LoginPage(), // Daftarkan rute lain disini
+          '/welcome': (context) => WelcomePage(),
+          '/login': (context) => LoginPage(),
+          '/register': (context) => RegisterPage(),
         },
       ),
     );
